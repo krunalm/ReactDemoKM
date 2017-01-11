@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index Page - React Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="js/react.js"></script>
+    <script type="text/javascript" src="js/react-dom.js"></script>
+    <script type="text/javascript" src="js/babel.min.js"></script>
+</head>
+<body>
+<h4>Sample html text to verify!</h4>
+<div id="root"></div>
+
+<script type="text/babel">
+
+    var Movie = React.createClass({
+        render: function () {
+            return (
+                    <div style={{border: 2 + "px solid maroon", margin: 4 + "px", padding: 10 + "px"}}>
+                        <h1>{this.props.title}</h1>
+                        <h2>{this.props.genre}</h2>
+                        <p><img src={this.props.imageUrl} alt="image"/></p>
+                    </div>
+            );
+        }
+    });
+
+    ReactDOM.render(<div>
+                <Movie title="Interstellar" genre="Sci-Fi"
+                       imageUrl="http://www.valuesandcapitalism.com/wp-content/uploads/2014/11/interstellar2-150x150.jpg"/>
+                <Movie title="The Avengers" genre="Action"
+                       imageUrl="http://i.amz.mshcdn.com/A7kkwfXf_gXqli0Tyw_gZg2vCIM=/150x150/2012%2F12%2F04%2F06%2F130440.flo"/>
+                <Movie title="Captain America" genre="Drama"
+                       imageUrl="http://costumehype.com/wp-content/uploads/2015/12/Captain-America-Costume-150x150.png"/>
+            </div>
+        , document.getElementById("root"));
+
+</script>
+
+</body>
+</html>
